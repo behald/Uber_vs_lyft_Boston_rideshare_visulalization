@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: dim_time
+    columns:
+      - name: time_key
+        tests: [not_null, unique]
+
+  - name: dim_route
+    columns:
+      - name: route_key
+        tests: [not_null, unique]
+
+  - name: dim_product
+    columns:
+      - name: product_key
+        tests: [not_null, unique]
+
+  - name: fct_trip_quotes
+    columns:
+      - name: time_key
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_time')
+                field: time_key
+
+      - name: route_key
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_route')
+                field: route_key
+
+      - name: product_key
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_key
+

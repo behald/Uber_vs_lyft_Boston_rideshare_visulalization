@@ -1,0 +1,7 @@
+streamlit==1.53.0
+duckdb==1.4.3
+pandas==2.3.3
+pydeck==0.9.1
+plotly==6.5.2
+numpy==2.4.1
+pyarrow==23.0.0

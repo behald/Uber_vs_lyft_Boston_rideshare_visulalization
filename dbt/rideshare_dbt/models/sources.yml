@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: ops
+    schema: main
+    description: "Operational outputs written by Python (hourly simulation)."
+    tables:
+      - name: mart_driver_reco_hourly
+        description: "Hourly top route recommendations per platform."
